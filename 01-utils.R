@@ -9,6 +9,8 @@ this_key    <- 1
 
 ## ----------------------------------------
 ## Handles Queries
+## base: link de api https://roads.googleapis.com/v1/nearestRoads?
+## This function makes the necessary API requests based on the 'base'parameter
 ## ----------------------------------------
 handle_queries <- function(base){
     url      <- paste(base,
@@ -25,7 +27,7 @@ handle_queries <- function(base){
             print('NO MORE QUERIES!!!')
             quit()
         }
-    }else if( handle_queries(base) == 200){
+    }else if( info_url$response.code == 200){
         return(resp)
     }else{
         print ("Otro codigo ")
@@ -41,7 +43,7 @@ distance_to_road <- function(point_, road_hash_){
     ## ----------------------------------------
     ## This function uses Google's API Roads to
     ## calculate the nearest road to a given point.
-    ## point = geografic point in (lat, lon)
+    ## point = geografic point in (lat, lon) format (vector)
     ## ----------------------------------------
     if (! with_real_distance){
       return 
@@ -67,6 +69,8 @@ distance_to_road <- function(point_, road_hash_){
 
 ## ----------------------------------------
 ## Get Distance To Road (bulk)
+## Function that returns the distance to the nearest road
+## for a series of points and sets it as a hash in the 'road_hash_' matrix
 ## ----------------------------------------
 distances_to_road <- function(points, road_hash_){
     apply(points, 1, function(t) t <- distance_to_road(t, road_hash_))

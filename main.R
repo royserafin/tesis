@@ -122,7 +122,7 @@ max_pop_always[[1]]$plot
 min_pop_always   <- run_test(c(TRUE))
 min_pop_always[[1]]$plot
 
-ggsave('~/Downloads/final_with_towers.png')
+ggsave('./Imagenes/final_with_towers.png')
 
 
 
