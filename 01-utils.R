@@ -44,6 +44,8 @@ distance_to_road <- function(point_, road_hash_){
     ## This function uses Google's API Roads to
     ## calculate the nearest road to a given point.
     ## point = geografic point in (lat, lon) format (vector)
+    ## Sets the result distance in 'road_hash_'
+    ## Returns: distance from 'point_' to nearest road
     ## ----------------------------------------
     if (! with_real_distance){
       return 
@@ -86,6 +88,10 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
     ## calculate the driving distance between two given points.
     ## origin  = geografic point in (latitude, longitude) format
     ## destiny = geografic point in (latitude, longitude) format
+    ## returns -1 if some point is null
+    ## returns distance in meters (driving distance if 'with_real_distance' is 
+    ## set, in other case returns Haversine distance)
+    ## sets distance in distance_matrix_ environment
     ##-------------------------------------
     if (!with_real_distance){
       distance <- distm (c(origin[,2], origin[,1]),
@@ -118,19 +124,25 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
         google_key  <- google_keys[this_key]
         key         <- paste0("key=", google_key)
         query       <- paste(base, origin_str, destiny_str, mode, key, sep = "&")
-        system(paste0("curl ",
-                      "'",
-                      query,
-                      "' | jq '.",
-                      "[\"routes\"][0][\"legs\"][0][\"distance\"][\"value\"]",
-                      "'",
-                      " | grep -Ev '^null$'",
-                      " > intermedio.txt"))
-        ## Get Distance
-        distance    <- readr::parse_number(readLines('intermedio.txt'))
+        handle      <- getCurlHandle()
+        resp     <- getURL(query, curl = handle)
+        info_url <- getCurlInfo(handle)
+        print(info_url$response.code)
+        resp  <- RJSONIO::fromJSON(resp)
+        distance <- resp$routes[[1]]$legs[[1]]$distance$value
+        # system(paste0("curl ",
+        #               "'",
+        #               query,
+        #               "' | jq '.",
+        #               "[\"routes\"][0][\"legs\"][0][\"distance\"][\"value\"]",
+        #               "'",
+        #               " | grep -Ev '^null$'",
+        #               " > intermedio.txt"))
+        # ## Get Distance
+        # distance    <- readr::parse_number(readLines('intermedio.txt'))
         ## Print query
-        print(query)
-        print(distance)
+        #print(query)
+        #print(distance)
         
         if (length(distance) == 0) {
             #to change key, we try again and check curl code 
@@ -167,7 +179,7 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
     if (file.exists("intermedio.txt")) {
         system('rm intermedio.txt')
     }
-    distance
+    #distance
 }
 
 ## ------------------------------------

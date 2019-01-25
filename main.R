@@ -137,6 +137,7 @@ save(road_hash,
 ###############################################
 ##########         MAPS        ################
 ###############################################
+register_google("AIzaSyCZdE992xxbW9ub0vTXENECHUW6gHsk1QY")
 map <- get_map(location = c(lon = mean(chis_points$lon),
                             lat = mean(chis_points$lat)),
                zoom = 11,
@@ -168,6 +169,6 @@ ggmap(map) +
                                                     l = 0))
     ) + xlab('Month') + ylab('Top sellers - Top devs') +
     guides(size = guide_legend(title="Population"))
-ggsave('/hom/luis/Downloads/pop_dist.R')
+ggsave('./Imagenes/pop_dist.png')
 
 

@@ -5,11 +5,17 @@ pkgTest <- function(x)
 {
   if (!require(x,character.only = TRUE))
   {
-    install.packages(x,dep=TRUE)
+    if(x == "ggmap"){
+      devtools::install_github("dkahle/ggmap", ref = "tidyup")
+    } else {
+      install.packages(x,dep=TRUE)
+    }
     if(!require(x,character.only = TRUE)) stop("Package not found")
   }
 }
 
+pkgTest("devtools")
+library(devtools)
 pkgTest("rjson")
 library(rjson)
 pkgTest("RJSONIO")
