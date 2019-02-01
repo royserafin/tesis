@@ -1,0 +1,302 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJsTRh--M8k4UR5McGDoNAUJw",
+         "types" : [ "route" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJVwkgdzc7k4URit0HwUgA6tE",
+         "types" : [ "route" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 16.2583951,
+               "lng" : -93.2334726
+            },
+            "southwest" : {
+               "lat" : 16.1865284,
+               "lng" : -93.2867596
+            }
+         },
+         "copyrights" : "Map data ©2019 Google, INEGI",
+         "legs" : [
+            {
+               "distance" : {
+                  "text" : "17.3 km",
+                  "value" : 17278
+               },
+               "duration" : {
+                  "text" : "29 mins",
+                  "value" : 1766
+               },
+               "end_address" : "CHIS 230, Villaflores, Chis., Mexico",
+               "end_location" : {
+                  "lat" : 16.2554398,
+                  "lng" : -93.2671213
+               },
+               "start_address" : "Unnamed Road, Chiapas, Mexico",
+               "start_location" : {
+                  "lat" : 16.1865284,
+                  "lng" : -93.28348969999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "1.2 km",
+                        "value" : 1183
+                     },
+                     "duration" : {
+                        "text" : "3 mins",
+                        "value" : 186
+                     },
+                     "end_location" : {
+                        "lat" : 16.195661,
+                        "lng" : -93.2850306
+                     },
+                     "html_instructions" : "Head <b>north</b>",
+                     "polyline" : {
+                        "points" : "ylxaBxljxPSD[FW@O?OAQEu@UkAa@SKOC_@E[?Q@UB_@HUFo@Ly@Ne@DaCTkBJq@FY?{@Cs@IkAMw@O_@IWIWG_A]u@UWIKCMAK?OBSDE@A?EBCDEDCFCDADCDAH?J?P@VBTFf@?D?B?D?FAFABAFCBA@CDEBG@KBo@Li@H}@Lg@LMDKFSPg@h@]XIP"
+                     },
+                     "start_location" : {
+                        "lat" : 16.1865284,
+                        "lng" : -93.28348969999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "2.5 km",
+                        "value" : 2542
+                     },
+                     "duration" : {
+                        "text" : "6 mins",
+                        "value" : 384
+                     },
+                     "end_location" : {
+                        "lat" : 16.2172811,
+                        "lng" : -93.2835388
+                     },
+                     "html_instructions" : "Turn <b>right</b>",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "{ezaBlvjxPC@ODc@Js@Ja@DkANqANqAP{ANe@F]HyAf@s@TKDI@G@G?G?[EOAqBCC?C?G?G@GBE@GDGDGJMRGH_@~@EHGFMJE@E@E@E@C?E?C?I?EAqAY}@Qi@KOASAS?[@]BYFe@Ls@LYDO@S?G?I?C?EAIAA?}@KmASwC]}BYm@KGCYGUIk@YiBy@uCmA}BeA}Ao@cBu@e@QEA[ISEO?SAc@?qCHyCDoCFgCDwBF_@@i@@YAa@Ck@IoAWc@Ma@Og@Q]QaAe@YKQESE]C}CC"
+                     },
+                     "start_location" : {
+                        "lat" : 16.195661,
+                        "lng" : -93.2850306
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 km",
+                        "value" : 215
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 29
+                     },
+                     "end_location" : {
+                        "lat" : 16.2182111,
+                        "lng" : -93.2817757
+                     },
+                     "html_instructions" : "Turn <b>right</b> toward <b>Libramiento Nte.</b>/<b>CHIS 230</b>",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "_m~aBbmjxPyD_J"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2172811,
+                        "lng" : -93.2835388
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "3.8 km",
+                        "value" : 3842
+                     },
+                     "duration" : {
+                        "text" : "6 mins",
+                        "value" : 354
+                     },
+                     "end_location" : {
+                        "lat" : 16.2441486,
+                        "lng" : -93.271486
+                     },
+                     "html_instructions" : "Turn <b>left</b> at the 1st cross street onto <b>Libramiento Nte.</b>/<b>CHIS 230</b>",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "yr~aBbbjxPMZEJKNQNUPSHMDYFUDaBXeC`@mANa@Da@BWBU@a@?w@@aBEiDE_EIiGQuFOeBEgAC{@A[?]BUDOBWJUL_@R[Rk@d@o@l@q@p@OPm@j@a@^a@^{EfFa@b@WVOHQHQDSBUBg@@yAEmCOqCOy@ISGUGQI]USSMOQYS[e@s@o@gAUe@y@qAu@_AmAuAy@}@w@y@mAuAo@u@cAgAMMmD}DyAwA[[UWKUKWGQQy@UwAQ{@K]O[[i@i@y@{A_C[k@a@i@w@kAm@}@oAqBu@uAGKCSYs@o@gBa@qAaAcCu@qBUi@Yo@IKEEGGEC"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2182111,
+                        "lng" : -93.2817757
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1.6 km",
+                        "value" : 1647
+                     },
+                     "duration" : {
+                        "text" : "2 mins",
+                        "value" : 138
+                     },
+                     "end_location" : {
+                        "lat" : 16.2566157,
+                        "lng" : -93.26568429999999
+                     },
+                     "html_instructions" : "Turn <b>left</b> onto <b>Tuxtla - Villaflores</b>/<b>CHIS 230</b><div style=\"font-size:0.9em\">Continue to follow CHIS 230</div>",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "}tcbBxahxPMHEBSLKDOFOBOBM@I?I?MAQEYGIAw@[g@Sc@SgCsA_Ae@}@e@y@a@iB}@_@ScFgCi@YQIMEMCMAOAMAO@U@a@D}APg@J[?qGx@i@DY?U?UCUGMCWOQMMMuBaCcEaFuFuGq@u@SS"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2441486,
+                        "lng" : -93.271486
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "3.8 km",
+                        "value" : 3784
+                     },
+                     "duration" : {
+                        "text" : "5 mins",
+                        "value" : 288
+                     },
+                     "end_location" : {
+                        "lat" : 16.2583951,
+                        "lng" : -93.233744
+                     },
+                     "html_instructions" : "Turn <b>right</b>",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "{bfbBn}fxPP]p@uBd@}Al@uB|BgH|@{CfCsIz@sCl@uBNi@Vw@Rq@`AaDbAeDjAuDPo@V{@v@gCHYN_A@K@_AG_AMs@I_@}@wBs@qAeAoBwAoCoAcC{AaCKOGIi@g@uAyAuAoAiAiAk@q@aAsAo@aAm@_Aq@qAc@gAg@qBUwACw@Ew@CcBEuBGkCGiDCoEGaAIaAGm@MyAGu@KuACo@MsAAI?W?Q@Q@CDOBOJ[\iAJ]Pi@Xy@DWBE?k@AWEa@Mc@Q_@SYc@g@WWeAkAKK"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2566157,
+                        "lng" : -93.26568429999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "57 m",
+                        "value" : 57
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 15
+                     },
+                     "end_location" : {
+                        "lat" : 16.2579578,
+                        "lng" : -93.2334726
+                     },
+                     "html_instructions" : "Turn <b>right</b>",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "_nfbBzu`xPvAu@"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2583951,
+                        "lng" : -93.233744
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 129
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 38
+                     },
+                     "end_location" : {
+                        "lat" : 16.2576918,
+                        "lng" : -93.2344957
+                     },
+                     "html_instructions" : "Turn <b>right</b>",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "gkfbBdt`xPZ|@Tz@`@x@]X"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2579578,
+                        "lng" : -93.2334726
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "3.7 km",
+                        "value" : 3672
+                     },
+                     "duration" : {
+                        "text" : "5 mins",
+                        "value" : 308
+                     },
+                     "end_location" : {
+                        "lat" : 16.2566157,
+                        "lng" : -93.26568429999999
+                     },
+                     "html_instructions" : "Turn <b>left</b>",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "qifbBrz`xPRXP^Lb@D`@@V?j@CDEVYx@Qh@K\]hAKZCNENABAP?P?V@HLrABn@JtAFt@LxAFl@H`AF`ABnEFhDFjCDtBBbBDv@Bv@TvAf@pBb@fAp@pAl@~@n@`A`ArAj@p@hAhAtAnAtAxAh@f@FHJNzA`CnAbCvAnCdAnBr@pA|@vBH^Lr@F~@A~@AJO~@IXw@fCWz@Qn@kAtDcAdDaA`DSp@Wv@Oh@m@tB{@rCgCrI}@zC}BfHm@tBe@|Aq@tBQ\"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2576918,
+                        "lng" : -93.2344957
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 km",
+                        "value" : 207
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 26
+                     },
+                     "end_location" : {
+                        "lat" : 16.2554398,
+                        "lng" : -93.2671213
+                     },
+                     "html_instructions" : "Turn <b>left</b> onto <b>CHIS 230</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "{bfbBn}fxPEJ`AlAnDdE"
+                     },
+                     "start_location" : {
+                        "lat" : 16.2566157,
+                        "lng" : -93.26568429999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "ylxaBxljxPo@Lg@@a@GaCw@c@O_@E[?g@Du@PiB\gDZ}CRuAC_CWwAYo@QuBs@c@MYAk@JSVKZ?\Dl@Fv@EZONmB\eBZYL{@z@]XIPSFwAVqGv@aCVwBp@_AZQB{@GaCCODMFe@n@e@hAURWFW?_Ey@c@Co@@w@JyAZeAF]CeH}@kDe@a@KaIkDeJ}Da@Kc@Ew@AkHNoLVcA?mAMsBe@iAa@_Bw@k@Qq@I}CCyD_JSf@]^i@Zg@LwB^sEp@qBNyA@kGKeXq@cCEy@Be@Hm@X{@f@{ArAqCnCwHbIa@Re@H}@DyAEmCOqCOy@Ii@Oo@_@a@c@{BqDoAwBcCuCqBwB}BkCqAuAmD}DyAwAq@s@Wm@YkAUwA]yAk@eAcEoGeBiCeCgEK_@iA{CcBuEkA{Cc@{@MMECMHYP[L_@Fo@?k@MaA]kAg@gEyBaGyCmGaD_@O[E]Ce@B_CVg@J[?{H~@o@?k@Ke@S_@[aRoTSSP]vAsEjD}KdEoNpCkJdFoPjBmGPkA@_AG_AWsA}@wBs@qA}C_GoAcC{AaCSY_CaC_DyCmBeC}AaCq@qAc@gAg@qBUwAIoBYoOCoEGaAQoBUoCOeCO}A?i@Lu@fAmD^qABq@Gy@_@cAw@aA}AcBKKvAu@p@xB`@x@]Xd@x@Lb@D`@@bAu@`Cy@rCGRAb@@`@PbCRjCTfCPbCJxJV|KBv@TvAf@pBb@fAp@pAl@~@pBtCj@p@hAhAjDhDp@p@fBpC`HtM|@vBH^Lr@F~@CjAYxAmDhLqDpLaGfS{DbMsArEq@tBQ\EJ`AlAnDdE"
+         },
+         "summary" : "CHIS 230",
+         "warnings" : [],
+         "waypoint_order" : []
+      }
+   ],
+   "status" : "OK"
+}
+

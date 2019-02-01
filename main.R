@@ -16,6 +16,9 @@
 ########################################
 ########################################
 
+## Uncomment if running main from different directory: 
+## setwd(getSrcDirectory(function(x) {x}))
+
 ########################################
 ## Libraries
 ########################################
@@ -92,7 +95,7 @@ run_test <- function(pop_criterion) {
                                build_with_road = FALSE,
                                plot_with_labels = plot_with_labels,
                                show_history_plot = show_history_plot,
-                               with_real_distance = FALSE)
+                               with_real_distance = TRUE)
   performance_data <- rbind(c(0,0),data.frame(net = without_road$net, pob = without_road$pob))
   plot <- ggplot(data=performance_data, aes(x = net , y = pob))+
           geom_point(size = 2, alpha = .7) +

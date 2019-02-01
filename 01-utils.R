@@ -127,9 +127,21 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
         handle      <- getCurlHandle()
         resp     <- getURL(query, curl = handle)
         info_url <- getCurlInfo(handle)
-        print(info_url$response.code)
+        #print(info_url$response.code)
+        #print(query)
+        #print(origin)
+        #print(destiny)
+        #print(resp)
+        resp <- gsub("([\\])","", resp)
         resp  <- RJSONIO::fromJSON(resp)
-        distance <- resp$routes[[1]]$legs[[1]]$distance$value
+        if(resp$status == "OK"){
+          distance <- resp$routes[[1]]$legs[[1]]$distance$value
+        } else {
+          distance <- distm (c(origin[,2], origin[,1]),
+                             c(destiny[,2], destiny[,1]),
+                             fun = distHaversine)[1]
+        }
+        #print(distance)
         # system(paste0("curl ",
         #               "'",
         #               query,
@@ -168,13 +180,14 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
     ## Get Distance (END)
     if(distance >= 0) {
         distance_matrix_[[key_1]] <- distance
+        return(distance)
     }
     if (distance <= 0 && length(google_keys) < this_key + 1){
         print('TRYING GEOSPHERE DISTANCE')
         distance <- distm (c(origin[,2], origin[,1]),
                           c(destiny[,2], destiny[,1]),
                           fun = distHaversine)[1]
-        print(distance)
+        return(distance)
     }
     if (file.exists("intermedio.txt")) {
         system('rm intermedio.txt')
