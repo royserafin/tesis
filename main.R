@@ -45,10 +45,15 @@ names(data) <- c("ent",
 
 ## Work with Chiapas
 ## 7 <- chis
-chis_mun    <- dplyr::filter(data, ent == 7 & mun %in% c(107,108)  )
-Encoding(chis_mun$nom_loc) <- "UTF-8"
-chis_mun$nom_loc <- iconv(chis_mun$nom_loc, "UTF-8", "UTF-8",sub='')
-chis_points <- dplyr::select(chis_mun, lon, lat, pob,nom_loc)
+# chis_mun    <- dplyr::filter(data, ent == 7 & mun %in% c(107,108)  )
+# Encoding(chis_mun$nom_loc) <- "UTF-8"
+# chis_mun$nom_loc <- iconv(chis_mun$nom_loc, "UTF-8", "UTF-8",sub='')
+# chis_points <- dplyr::select(chis_mun, lon, lat, pob,nom_loc)
+
+municipios_sanluis    <- dplyr::filter(data, ent == 24 & mun %in% c(4,30,55)  )
+Encoding(municipios_sanluis$nom_loc) <- "UTF-8"
+municipios_sanluis$nom_loc <- iconv(municipios_sanluis$nom_loc, "UTF-8", "UTF-8",sub='')
+chis_points <- dplyr::select(municipios_sanluis, lon, lat, pob,nom_loc)
 
 if (!file.exists("distance_matrix.RData")) {
     distance_matrix <- new.env(hash = TRUE)
@@ -70,7 +75,7 @@ min_pop_centroids <-  c(5000,725,100,50)
 mode              <- 'driving'
 plot_with_labels <- FALSE
 show_history_plot <- TRUE
-with_real_distance <- FALSE
+with_real_distance <- TRUE
 build_with_road   <- FALSE
 min_pop_criterion <- c(FALSE,TRUE)
 pop_criterion <- min_pop_criterion
@@ -118,12 +123,12 @@ max_min_min$plot
 
 
 max_pop_always  <- run_test(c(FALSE))
-max_pop_always[[1]]$plot
+max_pop_always$plot
 
 
 
 min_pop_always   <- run_test(c(TRUE))
-min_pop_always[[1]]$plot
+min_pop_always$plot
 
 ggsave('./Imagenes/final_with_towers.png')
 

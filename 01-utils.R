@@ -9,32 +9,124 @@ this_key    <- 1
 
 ## ----------------------------------------
 ## Handles Queries
-## base: link de api https://roads.googleapis.com/v1/nearestRoads?
-## This function makes the necessary API requests based on the 'base'parameter
+## Parámetros:
+## base: link base de api, ejemplo: "https://maps.googleapis.com/maps/api/directions/json?"
+## Función que hace requests necesarias al API especificada por el parámetro 'base'
+## Nota: la base debe contener los parámetros especificados por la API para hacer
+## la petición HTTP
+## Returns
 ## ----------------------------------------
-handle_queries <- function(base){
-    url      <- paste(base,
-                     google_keys[this_key],
-                     sep = "&key=")
-    curl     <- getCurlHandle()
-    resp     <- getURL(url, curl = curl)
-    info_url <- getCurlInfo(curl)
-    if(info_url$response.code == 403){
-        this_key <- this_key + 1
-        if(this_key <= length(google_keys)){
-            handle_queries(base)
-        }else{
-            print('NO MORE QUERIES!!!')
-            quit()
-        }
-    }else if( info_url$response.code == 200){
-        return(resp)
-    }else{
-        print ("Otro codigo ")
-        print ( handle_queries(base))
-        return({})
+handle_queries <- function(base, key){
+  url      <- paste(base,
+                    google_keys[key],
+                    sep = "&key=")
+  #print(url)
+  resp <- GET(url)
+  if(resp$status_code == 403){
+    print("ERROR 403")
+    return(-1)
+  }else if( resp$status_code == 200){
+    res <- content(resp, as = "text")
+    res <- gsub("([\\])","", res)
+    res  <- RJSONIO::fromJSON(res)
+    if(res$status != "OVER_QUERY_LIMIT"){
+      return(res)
+    } else {
+      key <- key + 1
+      if(key <= length(google_keys)){
+        handle_queries(base, key)
+      }else{
+        print('NO MORE QUERIES!!!')
+        return(-1)
+      }
     }
+  }else{
+    print ("Otro codigo ")
+    print ( resp$status_code)
+    return(-1)
+  }
 }
+
+##-------------------------------------
+## Función que calcula la distancia carretera entre dos puntos dados
+## usando la API de Google directions.
+## Parámetros:
+## origen - punto geográfico en formato (latitud, longitud)
+## destino - punto geográfico en formato (latitud, longitud)
+## Returns:
+## Distancia en metros
+##-------------------------------------
+distancia_origen_destino <- function(origin, destiny, distance_matrix){
+  
+  mode <- 'driving'
+  ## Checa si la distancia ya está registrada en 'distance_matrix'
+  key_part1 <- paste(origin, collapse = ",")
+  key_part2 <- paste(destiny, collapse = ",")
+  key_1     <- paste(key_part1, key_part2, sep = "->")
+  key_2     <- paste(key_part2, key_part1, sep = "->")
+  if (!is.null(distance_matrix[[key_1]] )) {
+    return (distance_matrix[[key_1]])
+  }
+  if (!is.null(distance_matrix[[key_2]])) {
+    return (distance_matrix[[key_2]])
+  }
+  if (is.na(destiny[1]) || is.na(origin[1])) {
+    return(-1)
+  }
+  ## Default distance value
+  distance <- -1
+  ## Creación de base para mandar a llamar a función handle_queries
+  base        <- "https://maps.googleapis.com/maps/api/directions/json?"
+  origin_str  <- paste0("origin=", key_part1)
+  destiny_str <- paste0("destination=", key_part2)
+  mode        <- paste0("mode=", mode)
+  query       <- paste(base, origin_str, destiny_str, mode, sep = "&")
+  # Llamado a función handle_queries, que hace petición a API
+  #print(query)
+  resp        <- handle_queries(query, 1)
+  if(length(resp) > 1){ # si la API otorga respuesta
+    
+    if(resp$status == "OK"){ # si se obtiene respuesta no vacía por parte de la API,
+      # se extrae el parámetro de respuesta
+      distance <- resp$routes[[1]]$legs[[1]]$distance$value
+    } 
+    # else { # si se obtiene respuesta vacía, se calcula distancia de Haversine
+    #   distance <- distm (c(origin[,2], origin[,1]),
+    #                      c(destiny[,2], destiny[,1]),
+    #                      fun = distHaversine)[1]
+    # }
+  }
+  # else { # si la API no otorga respuesta
+  #   distance <- distm (c(origin[,2], origin[,1]),
+  #                      c(destiny[,2], destiny[,1]),
+  #                      fun = distHaversine)[1]
+  # }
+  if(distance >= 0) {
+    #assign(key_1, distance, pos = distance_matrix)
+    #print("Registra distancia")
+    #distance_matrix[[key_1]] <- distance
+    distance_matrix[[key_1]] <- distance
+  } else {
+    print("No se pudo calcular distancia")
+    ##print(c(origin,destiny))
+  }
+  #print(distance)
+  return(distance)
+  #distance
+}
+
+
+distancias_carreteras <- function(puntos, distance_matrix){
+  ## Función que calcula distancias carreteras para pares origen-destino
+  ## Parámetros:
+  ## puntos - tabla de datos origen-destino con columnas en el formato:
+  ##          lat_origen | lon_origen | lat_destino | lon_destino
+  return(apply(origenes_destinos, 1, function(t){
+    distancia_origen_destino(t[1:2], t[3:4], distance_matrix)
+  } ))
+  
+}
+
 
 ## ----------------------------------------
 ## Get Distance To Road
@@ -97,101 +189,12 @@ get_num_distance <- function(origin, destiny, distance_matrix_, mode = 'driving'
       distance <- distm (c(origin[,2], origin[,1]),
                          c(destiny[,2], destiny[,1]),
                          fun = distHaversine)[1]
+      print("Entra aquí 1")
       return (distance)
+    } else {
+      return (distancia_origen_destino(origin, destiny, distance_matrix_))
     }
-    ## Check if origin destiny is in dataframe
-    key_part1 <- paste(origin, collapse = ",")
-    key_part2 <- paste(destiny, collapse = ",")
-    key_1     <- paste0(key_part1, key_part2)
-    key_2     <- paste0(key_part2, key_part1)
-    if (!is.null(distance_matrix_[[key_1]] )) {
-        return (distance_matrix_[[key_1]])
-    }
-    if (!is.null(distance_matrix_[[key_2]])) {
-        return (distance_matrix_[[key_2]])
-    }
-    if (is.na(destiny[1]) || is.na(origin[1])) {
-        return(-1)
-    }
-    ## Default distance value
-    distance <- -1
-    while(length(google_keys) >= this_key + 1 && distance < 0){
-        ## Get Distance (START)
-        base        <- "https://maps.googleapis.com/maps/api/directions/json?"
-        origin_str  <- paste0("origin=", paste(origin, collapse = ","))
-        destiny_str <- paste0("destination=", paste(destiny, collapse = ","))
-        mode        <- paste0("mode=", mode)
-        google_key  <- google_keys[this_key]
-        key         <- paste0("key=", google_key)
-        query       <- paste(base, origin_str, destiny_str, mode, key, sep = "&")
-        handle      <- getCurlHandle()
-        resp     <- getURL(query, curl = handle)
-        info_url <- getCurlInfo(handle)
-        #print(info_url$response.code)
-        #print(query)
-        #print(origin)
-        #print(destiny)
-        #print(resp)
-        resp <- gsub("([\\])","", resp)
-        resp  <- RJSONIO::fromJSON(resp)
-        if(resp$status == "OK"){
-          distance <- resp$routes[[1]]$legs[[1]]$distance$value
-        } else {
-          distance <- distm (c(origin[,2], origin[,1]),
-                             c(destiny[,2], destiny[,1]),
-                             fun = distHaversine)[1]
-        }
-        #print(distance)
-        # system(paste0("curl ",
-        #               "'",
-        #               query,
-        #               "' | jq '.",
-        #               "[\"routes\"][0][\"legs\"][0][\"distance\"][\"value\"]",
-        #               "'",
-        #               " | grep -Ev '^null$'",
-        #               " > intermedio.txt"))
-        # ## Get Distance
-        # distance    <- readr::parse_number(readLines('intermedio.txt'))
-        ## Print query
-        #print(query)
-        #print(distance)
-        
-        if (length(distance) == 0) {
-            #to change key, we try again and check curl code 
-            curl     <- getCurlHandle()
-            resp     <- getURL(query, curl = curl)
-            info_url <- getCurlInfo(curl)
-            distance    <- -1
-            if(info_url$response.code == 403){
-              this_key <- this_key + 1
-              print("CHANGE KEY")  
-              this_key    <<- this_key + 1
-              google_key  <- google_keys[this_key]
-              key         <- paste0("key=", google_key)
-            } else {
-              break
-            }
-        }
-    }
-    ## If no more Queries
-    if(length(google_keys) < this_key + 1){
-        print('NO MORE QUERIES FOR TODAY')
-    }
-    ## Get Distance (END)
-    if(distance >= 0) {
-        distance_matrix_[[key_1]] <- distance
-        return(distance)
-    }
-    if (distance <= 0 && length(google_keys) < this_key + 1){
-        print('TRYING GEOSPHERE DISTANCE')
-        distance <- distm (c(origin[,2], origin[,1]),
-                          c(destiny[,2], destiny[,1]),
-                          fun = distHaversine)[1]
-        return(distance)
-    }
-    if (file.exists("intermedio.txt")) {
-        system('rm intermedio.txt')
-    }
+    
     #distance
 }
 
