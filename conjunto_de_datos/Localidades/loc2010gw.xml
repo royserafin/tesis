@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.conabio.gob.mx/informacion/gis/schemas/fgdc/fgdc-std-001-1998.xsd">
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>INEGI, (2010). &apos;Localidades de la Rep&#x00FA;blica Mexicana, 2010&apos;, escala: 1:1. Obtenido de Principales resultados por localidad (ITER). Censo de Poblaci&#x00F3;n y Vivienda 2010. Editado por Comisi&#x00F3;n Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO).. M&#x00E9;xico, D.F.. </origin>
+        <pubdate>20120124</pubdate>
+        <title>Localidades de la Rep&#x00FA;blica Mexicana, 2010</title>
+        <geoform>Shapefile. Formato vectorial compuesto por 4 archivos (shp, shx, dbf,prj)</geoform>
+        <onlink>http://www.conabio.gob.mx/informacion/metadata/gis/loc2010gw.xml?_httpcache=yes&amp;_xsl=/db/metadata/xsl/fgdc_html.xsl_indent=no</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>El mapa contiene la identificaci&#x00F3;n geogr&#x00E1;fica de las 192 245 localidades habitadas, como resultado del Censo de Poblaci&#x00F3;n y Vivienda del 2010. Cada registro incluye los valores de longitud, latitud, altitud y poblaci&#x00F3;n total.</abstract>
+      <purpose>Mostrar informaci&#x00F3;n proveniente del Censo de Poblaci&#x00F3;n y Vivienda 2010.</purpose>
+      <supplinf> Referencias en la web: www.inegi.org.mx</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>00000000</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>No conocido</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>No planeado</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-118.301111</westbc>
+        <eastbc>-86.731667</eastbc>
+        <northbc>32.715278</northbc>
+        <southbc>14.535556</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>CNB.ACCESO</themekt>
+        <themekey>publico</themekey>
+      </theme>
+      <theme>
+        <themekt>CNB.LICENCIA</themekt>
+        <themekey>CC_BY_NC_2.5_MX</themekey>
+      </theme>
+      <theme>
+        <themekt>CNB.VISIBILIDAD</themekt>
+        <themekey>0</themekey>
+        <themekey>10</themekey>
+      </theme>
+      <theme>
+        <themekt>ESTRUCTURA</themekt>
+        <themekey>pobla</themekey>
+        <themekey>asgral</themekey>
+        <themekey>loc2010gw</themekey>
+      </theme>
+      <theme>
+        <themekt>CNB.ESCALA</themekt>
+        <themekey>1</themekey>
+      </theme>
+      <theme>
+        <themekt>CONABIO</themekt>
+        <themekey>2010</themekey>
+        <themekey>Localidades</themekey>
+        <themekey>Poblaci&#x00F3;n</themekey>
+        <themekey>Poblados</themekey>
+      </theme>
+      <place>
+        <placekt>CONABIO</placekt>
+        <placekey>Aguascalientes</placekey>
+        <placekey>Baja California</placekey>
+        <placekey>Baja California Sur</placekey>
+        <placekey>Campeche</placekey>
+        <placekey>Coahuila</placekey>
+        <placekey>Colima</placekey>
+        <placekey>Chiapas</placekey>
+        <placekey>Chihuahua</placekey>
+        <placekey>Distrito Federal</placekey>
+        <placekey>Durango</placekey>
+        <placekey>Estado de M&#x00E9;xico</placekey>
+        <placekey>Guanajuato</placekey>
+        <placekey>Guerrero</placekey>
+        <placekey>Hidalgo</placekey>
+        <placekey>Jalisco</placekey>
+        <placekey>Michoac&#x00E1;n</placekey>
+        <placekey>Morelos</placekey>
+        <placekey>Nayarit</placekey>
+        <placekey>Nuevo Le&#x00F3;n</placekey>
+        <placekey>Oaxaca</placekey>
+        <placekey>Puebla</placekey>
+        <placekey>Quer&#x00E9;taro</placekey>
+        <placekey>Quintana Roo</placekey>
+        <placekey>Rep&#x00FA;blica Mexicana</placekey>
+        <placekey>San Luis Potos&#x00ED;</placekey>
+        <placekey>Sinaloa</placekey>
+        <placekey>Sonora</placekey>
+        <placekey>Tabasco</placekey>
+        <placekey>Tamaulipas</placekey>
+        <placekey>Tlaxcala</placekey>
+        <placekey>Veracruz</placekey>
+        <placekey>Yucat&#x00E1;n</placekey>
+        <placekey>Zacatecas</placekey>
+      </place>
+    </keywords>
+    <accconst>Sin restricciones</accconst>
+    <useconst>No se permite utilizar estos datos con fines lucrativos y se debe citar la fuente del mapa y a CONABIO. Ver la licencia completa en http://creativecommons.org/licenses/by-nc/2.5/mx/</useconst>
+    <browse>
+      <browsen>http://www.conabio.gob.mx/informacion/gis/layouts/loc2010gw.png</browsen>
+      <browsed>Mapa ilustrativo de Localidades de la Rep&#x00FA;blica Mexicana, 2010</browsed>
+      <browset>png</browset>
+    </browse>
+    <native>ArcGis Desktop 10 Service Pack 2, Windows</native>
+  </idinfo>
+  <dataqual>
+    <logic>Gabinete</logic>
+    <complete>1) Manejo de datos tabulares y 2) Representaci&#x00F3;n espacial de los datos tabulares.</complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>No conocido</origin>
+            <pubdate>00000000</pubdate>
+            <title>No conocido</title>
+            <geoform>No conocido</geoform>
+          </citeinfo>
+        </srccite>
+        <srcscale>1</srcscale>
+        <typesrc>Digital</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>
+              <caldate>00000000</caldate>
+            </sngdate>
+          </timeinfo>
+          <srccurr>No conocido</srccurr>
+        </srctime>
+        <srccitea>No conocido</srccitea>
+        <srccontr>INEGI, 2010, &apos;Principales resultados por localidad (ITER). Censo de Poblaci&#x00F3;n y Vivienda 2010.&apos;, Aguascalientes, Ags., Instituto Nacional de Estad&#x00ED;stica y Geograf&#x00ED;a, www.inegi.org.mx, </srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>1) De la pagina de INEGI (www.inegi.org.mx), en la secci&#x00F3;n Censos y conteos de poblaci&#x00F3;n y vivienda, se seleccion&#x00F3; Censo de Poblaci&#x00F3;n y Vivienda 2010. 2) De Resultados definitivos. Se tomaron los datos de Principales resultados por localidad (ITER). 3) Los datos se pasaron a una base de datos, creando una tabla por cada entidad federativa. Seleccionando los siguientes campos: identificaci&#x00F3;n geogr&#x00E1;fica (longitud y latitud), altitud y poblaci&#x00F3;n total. 4) Las tablas elaboradas para cada entidad federativa se exportaron al SIG ArcGis. 5) Representaci&#x00F3;n espacial de la informaci&#x00F3;n a nivel nacional.</procdesc>
+        <procdate>00000000</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm >
+        <sdtstype>Point</sdtstype>
+        <ptvctcnt>192245</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>0.0174532925199433</latres>
+        <longres>0.0174532925199433</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>WGS84</horizdn>
+        <ellips>WGS84</ellips>
+        <semiaxis>6378137.000000</semiaxis>
+        <denflat>298.257224</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>LOC2010GW.DBF</enttypl>
+        <enttypd>Distribuci&#x00F3;n de las localidades, resultado del Censo de Poblaci&#x00F3;n y Vivienda 2010.</enttypd>
+        <enttypds>No conocido</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>CVE_EDO</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>C&#x00F3;digo que identifica a la entidad federativa, conforme al Marco Geoestad&#x00ED;stico Nacional.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NOM_ENT</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>Nombre oficial de la entidad federativa.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CVE_MUN</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>C&#x00F3;digo que identifica al municipio al interior de una entidad federativa, conforme al Marco Geoestad&#x00ED;stico Nacional</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NOM_MUN</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>Nombre oficial del municipio o delegaci&#x00F3;n en el caso del Distrito Federal.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CVE_LOC</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>C&#x00F3;digo que identifica a la localidad, al interior de cada municipio, conforme al Marco Geoestad&#x00ED;stico Nacional.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NOM_LOC</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>Nombre con el que se reconoce a la localidad dado por la ley o la costumbre.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ALTITUD</attrlabl>
+        <attrdef>Car&#x00E1;cter</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>Altura a la que se encuentra una localidad, respecto al nivel medio del mar.</udom>
+        </attrdomv>
+        <attrvai>
+          <attrva>1</attrva>
+          <attrvae>Metros sobre el nivel del mar (m.s.n.m.)</attrvae>
+        </attrvai>
+      </attr>
+      <attr>
+        <attrlabl>POBTOT</attrlabl>
+        <attrdef>Num&#x00E9;rico</attrdef>
+        <attrdefs>INEGI</attrdefs>
+        <attrdomv>
+          <udom>Total de personas que residen en las localidades.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LOG_DD</attrlabl>
+        <attrdef>Num&#x00E9;rico</attrdef>
+        <attrdefs>SIG ArcGis</attrdefs>
+        <attrdomv>
+          <udom>Ubicaci&#x00F3;n de la localidad al oeste del Meridiano de Greenwich, expresada en grados decimales.</udom>
+        </attrdomv>
+        <attrvai>
+          <attrva>1</attrva>
+          <attrvae>Grados decimales</attrvae>
+        </attrvai>
+      </attr>
+      <attr>
+        <attrlabl>LAT_DD</attrlabl>
+        <attrdef>Num&#x00E9;rico</attrdef>
+        <attrdefs>SIG ArcGis</attrdefs>
+        <attrdomv>
+          <udom>Ubicaci&#x00F3;n de la localidad al norte del Ecuador, expresada en grados decimales.</udom>
+        </attrdomv>
+        <attrvai>
+          <attrva>1</attrva>
+          <attrvae>Grados decimales</attrvae>
+        </attrvai>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>CONABIO</cntorg>
+          <cntper>Jose Manuel Davila Rosas</cntper>
+        </cntorgp>
+        <cntpos>Subdirector de Sistemas de Informaci&#x00F3;n Geogr&#x00E1;fica</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>Liga Perif&#x00E9;rico Insurgentes Sur Num. 4903 1er piso. Col. Parques del Pedregal. Delg. Tlalpan</address>
+          <city>Ciudad de M&#x00E9;xico</city>
+          <state>D.F.</state>
+          <postal>14010</postal>
+          <country>M&#x00E9;xico</country>
+        </cntaddr>
+        <cntvoice>50045012</cntvoice>
+        <cntfax>50044931</cntfax>
+        <cntemail>jdavila@conabio.gob.mx</cntemail>
+        <hours>Lunes a Viernes de las 8 hasta 18 hrs.</hours>
+      </cntinfo>
+    </distrib>
+    <resdesc>loc2010gw</resdesc>
+    <distliab>La Subdirecci&#x00F3;n de Sistemas de Informaci&#x00F3;n Geogr&#x00E1;fica de la CONABIO solo se hace responsable de la informaci&#x00F3;n presentada en el mapa y se deslinda del uso que se le de a la misma.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>ESRI Shapefile (SHP)</formname>
+          <formverd>199807</formverd>
+          <filedec>compactado en ZIP</filedec>
+          <transize>867</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr> http://www.conabio.gob.mx/informacion/gis/maps/geo/loc2010gw.zip</networkr>
+              </networka>
+            </computer>
+            <accinstr>Coordenadas geogr&#x00E1;ficas WGS84. (EPSG:4326). Formato vectorial de almacenamiento de elementos geogr&#x00E1;ficos y sus atributos asociados. </accinstr>
+          </onlinopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr> http://www.conabio.gob.mx/informacion/gis/maps/ccl/loc2010gw_c.zip</networkr>
+              </networka>
+            </computer>
+            <accinstr>Proyecci&#x00F3;n C&#x00F3;nica Conforme de Lambert WGS84. (EPSG:48402). Formato vectorial de almacenamiento de elementos geogr&#x00E1;ficos y sus atributos asociados. </accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>Google Earth (KML)</formname>
+          <formvern>2.2</formvern>
+          <filedec>compactado como KMZ</filedec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr> http://www.conabio.gob.mx/informacion/gis/maps/kmz/loc2010gw.kmz</networkr>
+              </networka>
+            </computer>
+            <accinstr>Coordenadas geogr&#x00E1;ficas WGS84. (EPSG:4326). Los archivos KML representan datos geogr&#x00E1;ficos para Google Earth, a menudo suelen distribuirse comprimidos como KMZ.</accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>CNB.GEO.TMS</formname>
+          <formvern>1.0.0</formvern>
+          <formspec>PNG</formspec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://wms0.conabio.gob.mx/loc2010gw.py/</networkr>
+                <networkr>http://wms1.conabio.gob.mx/loc2010gw.py/</networkr>
+                <networkr>http://wms2.conabio.gob.mx/loc2010gw.py/</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>Servicio de im&#x00E1;genes (WMS)</formname>
+          <formvern>1.1.1</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://www.conabio.gob.mx/informacion/explorer/wms?Format=image.png&amp;request=GetMap&amp;version=1.1.1&amp;width=800&amp;height=424&amp;srs=EPSG:4326&amp;bbox=-120.0,13.8,-85.1,33.5&amp;layers=loc2010gw</networkr>
+              </networka>
+            </computer>
+            <accinstr>Coordenadas geogr&#x00E1;ficas WGS84. (EPSG:4326). Servicio Web Map Service. Los mapas de datos referenciados espacialmente producidos se generan normalmente en un formato de imagen como PNG,.png o JPEG, pueden se vistos en un SIG </accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>Mapa digital interactivo</formname>
+          <formvern>1.0</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://www.conabio.gob.mx/informacion/gis/?vns=gis_root/pobla/asgral/loc2010gw</networkr>
+              </networka>
+            </computer>
+            <accinstr>Coordenadas geogr&#x00E1;ficas WGS84. (EPSG:4326)</accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>Acceso libre sin ning&#x00FA;n cargo al p&#x00FA;blico en general.</fees>
+    </stdorder>
+    <techpreq>Sistemas compatibles con archivos Shapefile, en caso que existan se pueden visualizar en Google Earth KML y/o conexi&#x00F3;n al servicio WMS.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20120124</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>CONABIO</cntorg>
+          <cntper>Norma Moreno</cntper>
+        </cntorgp>
+        <cntpos>Administrador de Metadatos</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>Liga Perif&#x00E9;rico Insurgentes Sur Num. 4903 1er piso. Col. Parques del Pedregal. Delg. Tlalpan</address>
+          <city>Ciudad de M&#x00E9;xico</city>
+          <state>D.F.</state>
+          <postal>14010</postal>
+          <country>M&#x00E9;xico</country>
+        </cntaddr>
+        <cntvoice>01 55 5004 4938</cntvoice>
+        <cntfax>50044931</cntfax>
+        <cntemail>ssig@conabio.gob.mx</cntemail>
+        <hours>Lunes a Viernes de 8 a 18 hrs.</hours>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standards for Digital Geospatial Metadata, 1998</metstdn>
+    <metstdv>FGDC-STD-001-1998 version 2.0</metstdv>
+  </metainfo>
+</metadata>

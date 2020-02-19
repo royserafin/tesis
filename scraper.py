@@ -2,6 +2,7 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
 import re
 import time
+import mmap
 
 # Archivo resultado
 filename = 'terrenos.csv'
@@ -10,7 +11,7 @@ filename = 'terrenos.csv'
 requests = 0
 
 t0 = 0
-for pag in range(1,100):
+for pag in range(1,1998):
 
     # Creando string de página de búsqueda
     urlstr = f'https://www.lamudi.com.mx/terreno/for-sale/?page={pag}'
@@ -19,7 +20,7 @@ for pag in range(1,100):
 
     t_pag =time.time()-t0
     print("Tiempo entre páginas" + str(t_pag))
-    if (time.time()-t0)<7:
+    if (time.time()-t0)<1:
         print("Esperando (pag)")
         time.sleep(100)
     t0=time.time()
@@ -90,16 +91,22 @@ for pag in range(1,100):
             print('No se pudo obtener precio' + str(i))
 
         try:
+            regex = re.compile('KeyInformation-value.*')
             tamaño = (terreno.
-                find('span', {'class': 'KeyInformation-value'}).get_text(strip=True))
+                find('span', {'class': regex}).get_text(strip=True))
             tamaño = tamaño.replace("  ","")
             tamaño = tamaño.replace(",",";" )
             tamaño = tamaño.replace("\r\n", "||")
             tamaño = tamaño.replace("\n", "||")
+            #print(tamaño)
         except:
             tamaño = 'NA'
             print('No se pudo obtener tamaño' + str(i))
 
+        with open(filename,'rb',0) as f, mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as s:
+            if s.find(bytes(title, 'utf-8')) != -1:
+                print("Terreno repetido")
+                continue
         # Obteniendo latitud y longitud
         try:
 
@@ -136,8 +143,8 @@ for pag in range(1,100):
             longitud = 'NA'
             print('No se pudo obtener coordenadas' + str(i))
 
-        with open(filename, "a", encoding="utf-8") as f:
-            f.write(f'{title},{address},{descripcion},{precio},{tamaño},{latitud},{longitud}\n')
+        with open(filename, "a", encoding="utf-8") as file:
+            file.write(f'{title},{address},{descripcion},{precio},{tamaño},{latitud},{longitud}\n')
 
 
         i+=1
